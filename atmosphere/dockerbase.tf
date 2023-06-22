@@ -79,7 +79,7 @@ resource "digitalocean_droplet" "www-automatisch" {
       "sleep 5s",
       "apt install -y nginx",
       "apt install -y python3-certbot-nginx",
-      # create ghost installation directory
+      # create automatisch installation directory
       "mkdir /root/automatisch",
     ]
   }
@@ -93,7 +93,7 @@ resource "digitalocean_droplet" "www-automatisch" {
       webhook_secret_key = var.webhook_secret_key != "" ? var.webhook_secret_key : random_password.webhook_secret_key.result,
       app_secret_key = var.app_secret_key != "" ? var.app_secret_key : random_password.app_secret_key.result
     })
-    destination = "/root/ghost/docker-compose.yml"
+    destination = "/root/automatisch/docker-compose.yml"
   }
 
   provisioner "file" {

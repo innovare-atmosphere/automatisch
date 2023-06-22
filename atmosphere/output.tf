@@ -5,5 +5,5 @@ output "ip_address" {
 
 output "http_address" {
   description = "You can visit your installation at: "
-  value       = "http://${var.domain != "" ? var.domain : digitalocean_droplet.www-automatisch.ipv4_address}/ghost"
+  value       = "http://${var.domain != "" ? var.domain : digitalocean_droplet.www-automatisch.ipv4_address}/"
 }
