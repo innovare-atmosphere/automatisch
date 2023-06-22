@@ -79,8 +79,10 @@ resource "digitalocean_droplet" "www-automatisch" {
       "sleep 5s",
       "apt install -y nginx",
       "apt install -y python3-certbot-nginx",
+      "apt install -y git",
       # create automatisch installation directory
-      "mkdir /root/automatisch",
+      "cd /root",
+      "git clone https://github.com/automatisch/automatisch.git",
     ]
   }
 
